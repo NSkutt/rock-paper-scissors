@@ -1,15 +1,15 @@
 let win
 //Start game
-function game() {
-  win=0
-    for (var i=1; i<=5; i++) {
-    console.log("round " + i)
-      playRound()
-      if (+playerSelection == 0) {i=6; win=undefined}
-      }
-	function playRound() {
+												function game() {
+												 		/* win=0
+													    for (var i=1; i<=5; i++) {
+													    console.log("round " + i)
+													      playRound()
+													      if (+playerSelection == 0) {i=6; win=undefined}
+													      }
+														function playRound() {*/
 //Receive input
-		playerSelection = prompt(`Round ${i}: Rock, paper, or scissors?`)
+										//playerSelection = prompt(`Round ${i}: Rock, paper, or scissors?`)
 		if (+playerSelection == 0){alert("Canceled!")} 
 		else{
 //make sure input is either rock, paper, or scissors
@@ -52,7 +52,7 @@ function game() {
 			alert("Invalid entry! Please pick rock, paper, or scissors!"); i--
 			}
 		}
-   }
+  // }
 console.log("%c End of loop", "background:red; font-size:15px")
 //Declare Game winner
 if (win >= 1){console.log("%c You win!", "font-size:20px; color:gold")}
@@ -60,3 +60,6 @@ else if(win===0){console.log("%c It's a tie!", "font-size:20px; color: green")}
 else if(win == undefined){console.log("Exited")}
 else {console.log("%c You lost, better luck next time", "font-size:20px; background: red; color:gold")}
 }
+
+
+
