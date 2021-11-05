@@ -1,0 +1,48 @@
+body{margin:0px; padding:0px;}
+.container{
+	height:100vh;
+	background-color: #ffdead;
+	align-items:space-around;
+	display:grid;
+	grid-gap:5px;
+	grid-template-rows: 2fr 5fr 1fr;
+	grid-template-areas:
+	"result result result"
+	"rock paper scissors"
+	". . .";
+	}
+	
+	.result{
+	grid-area:result;
+	background-color:#bada55;
+	}
+	#rock{
+		grid-area: rock;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}
+	#paper{
+		grid-area:paper;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}
+	#scissors{
+		grid-area:scissors;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}
+	.choice{
+	background-color:#424864;
+	border-style: groove;
+	border-width: 6px;
+	border-color:#7C4818;
+	}
+	
+	
+	
+	
+	.disabled{pointer-events:none;}
+	
