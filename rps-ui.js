@@ -17,23 +17,29 @@ const ansArea = document.querySelector(".result");
 		game("scissors");
 		});
 function game (playerSelection){
-	const choices = ("rock", "paper", "scissors");
-	let computerSelection = choices(Math.floor(Math.random() * choices.length));
+	const choices = ["rock", "paper", "scissors"];
+	let computerSelection = choices[Math.floor(Math.random() * choices.length)];
 //Win text V
-	let win = `You win! ${playerSelection} beats ${computerSelection}!`;
+	let win = `You win, ${playerSelection} beats ${computerSelection}!`;
 	if (playerSelection == computerSelection){
 	//TIE RESULT
-	ansArea.innerText = `You both picked ${playerSelection}`
+	ansArea.innerText = `It's a tie! You both picked ${playerSelection}!`;
+	ansArea.setAttribute("id", "");
 	}else if(playerSelection == "rock" && computerSelection == "scissors"){
 	//WIN 1
 	ansArea.innerText = win;
+	ansArea.setAttribute("id", "victory");
 	}else if(playerSelection == "paper" && computerSelection == "rock"){
 	//WIN 2
 	ansArea.innerText = win;
+	ansArea.setAttribute("id", "victory");
 	}else if(playerSelection == "scissors" && computerSelection == "paper"){
 	//WIN 3
 	ansArea.innerText = win;
+	ansArea.setAttribute("id", "victory");
 	}else{
 	//Loss
 	ansArea.innerText = `You lose! ${computerSelection} beats ${playerSelection}!`;
+	ansArea.setAttribute("id", "defeat");
 	};
+}
