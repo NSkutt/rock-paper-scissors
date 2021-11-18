@@ -1,15 +1,44 @@
 body{margin:0px; padding:0px;}
+
+.cover{
+		position:absolute;
+		height:100%;
+		width:100%;
+		background-color:#300;
+		top: 0;
+		left: 0;
+		z-index:1;
+		
+		display:flex;
+		justify-content:space-around;
+		align-items:center;
+		font-size: 50px;
+		color:lightgrey;
+		}
+	
+.playing{display:none;}
+.end{pointer-events:none;}
 .container{
 	height:100vh;
 	background-color: #ffdead;
 	align-items:space-around;
 	display:grid;
 	grid-gap:5px;
-	grid-template-rows: 2fr 5fr 1fr;
+	grid-template-rows: 1fr 2fr 5fr 1fr;
 	grid-template-areas:
+	"counter counter counter"
 	"result result result"
 	"rock paper scissors"
 	"footer . .";
+	}
+
+	
+	.counter{
+	grid-area:counter;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	font-size: 30px;
 	}
 	
 	.result{
@@ -55,6 +84,13 @@ body{margin:0px; padding:0px;}
 	 align-items:flex-end; 
 	 justify-content:flex-start;}
 	
+	button{
+	background-color:#ffdead;
+	color:#002152;
+	border-radius: 5%;
+	font-size:30px;
+	margin:0;
+	}
 	
 	.disabled{pointer-events:none;}
 	

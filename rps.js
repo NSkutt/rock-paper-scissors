@@ -2,7 +2,7 @@ let win
 //Start game
 												function game() {
 												 		/* win=0
-													    for (var i=1; i<=5; i++) {
+		//=======>									    for (var i=1; i<=5; i++) {
 													    console.log("round " + i)
 													      playRound()
 													      if (+playerSelection == 0) {i=6; win=undefined}
