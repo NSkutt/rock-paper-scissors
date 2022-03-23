@@ -1,5 +1,6 @@
 let wins;
 let losses;
+let lastTime;
 const start = document.querySelector("#starter");
 	start.addEventListener("click", () => {
 		play("playing");
@@ -22,7 +23,6 @@ const scissors = document.querySelector("#scissors");
 	
 const ansArea = document.querySelector(".result");
 	
-	
 	rock.addEventListener("click", () => {
 		game("rock");
 		});
@@ -34,9 +34,21 @@ const ansArea = document.querySelector(".result");
 	scissors.addEventListener("click", () => {
 		game("scissors");
 		});
+
 function game (playerSelection){
 	const choices = ["rock", "paper", "scissors"];
-	let computerSelection = choices[Math.floor(Math.random() * choices.length)];
+	let computerSelection;
+	function aiTurn() { //Little addition after JS 30 to make sure you don't get the same thing repeatedly
+		computerSelection = choices[Math.floor(Math.random() * choices.length)];
+		if (computerSelection === lastTime){
+			//console.log(`Same as last time, try again`);
+			return aiTurn(); //Thanks Wes Bos!
+		}
+		lastTime = computerSelection;
+		return computerSelection;
+	}
+	aiTurn();
+	//console.log(computerSelection);
 //Win text V
 	let win = `You win, ${playerSelection} beats ${computerSelection}!`;
 	if (playerSelection == computerSelection){
@@ -70,7 +82,7 @@ function final(){
 	rock.setAttribute("class", "end");
 	paper.setAttribute("class", "end");
 	scissors.setAttribute("class", "end");
-	//HAHAAAAAAaaaaaa Finally got the bugs worked out
+	//HAHAAAAAAaaaaaa Finally got the bugs worked out; Wow I was excited about that last time....
 	cover.setAttribute("class", "cover end");
 	setTimeout(function(){
 	endgame.setAttribute("class","cover");

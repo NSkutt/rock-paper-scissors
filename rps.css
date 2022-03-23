@@ -85,10 +85,11 @@ body{margin:0px; padding:0px;}
 	 justify-content:flex-start;}
 	
 	button{
-	background-color:#ffdead;
-	color:#002152;
-	border-radius: 5%;
-	font-size:30px;
+	background-color:#2e2706;
+	color:#0cc;
+	border-radius: 37%;
+	font-family: 'Times New Roman', serif;
+	font-size:50px;
 	margin:0;
 	}
 	
